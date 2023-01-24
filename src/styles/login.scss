@@ -1,0 +1,87 @@
+@import "colors";
+
+.login {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../assets/bg5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > button {
+    background-color: white;
+    color: $lightdark;
+    border: none;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+      margin-left: 1rem;
+    }
+
+    // &:hover {
+    //   color: $dark;
+    // }
+    &::before {
+      position: absolute;
+      content: '';
+      background: linear-gradient(190deg,
+          #eb0606,
+          #d2670f,
+          #cbc812,
+          #43d700,
+          #0dceae,
+          #006eff,
+          #6f00ff,
+          #e806b7,
+          #eb0606);
+      left: -2px;
+      top: -2px;
+      opacity: 0;
+      background-size: 400%;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      filter: blur(5px);
+      animation: anim 10s linear infinite;
+      border-radius: 90px;
+      transition: opacity .4s ease-in;
+      z-index: -1;
+
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    &::after {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      background-color: #ee5f5f;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      border-radius: 10px;
+    }
+
+    @keyframes anim {
+      0% {
+        background-position: 0 0;
+      }
+
+      50% {
+        background-position: 500% 0;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+  }
+}
